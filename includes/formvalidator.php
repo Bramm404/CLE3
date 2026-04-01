@@ -38,9 +38,16 @@ if(isset($_POST['name'])) {
         $errors['password'] = "Wachtwoord mag geen spaties bevatten";
     }
 
-    if ($_POST['password'] !== $_POST['confirmpassword']) {
-        $errors['confirmpassword'] = "Wachtwoorden komen niet overeen";
+    if ($_POST['password'] !== $_POST['confirm_password']) {
+        $errors['confirm_password'] = "Wachtwoorden komen niet overeen";
     }
+
+    if (preg_match('/a-zA-Z/', $_POST['phone'])) {
+        $errors['phone'] = "Ongeldig telefoonnummer";
+    } else if (preg_match('/[[<>(){}"!@#$%^&*()_=:,.]/', $_POST['phone'])) {
+        $errors['phone'] = "Ongeldig telefoonnummer";
+    }
+
 }
 
 if (isset($_POST['user'])) {

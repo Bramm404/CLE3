@@ -10,10 +10,12 @@ function init() {
 
         const hasLength = password.length >= 8
         const hasCapital = /[A-Z]/.test(password)
+        const hasNumber = /[0-9]/.test(password)
         const hasSpecial = /[!@#$%^&*,.?:]/.test(password)
 
         updateCheck('#length', hasLength)
         updateCheck('#capital', hasCapital)
+        updateCheck('#number', hasNumber)
         updateCheck('#spec', hasSpecial)
 
     })
