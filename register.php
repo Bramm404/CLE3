@@ -59,7 +59,7 @@ if (isset($_POST['submit'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Hoofdpagina </title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/main.js" defer></script>
+    <script src="js/register.js" defer></script>
 </head>
 <body>
 
@@ -68,10 +68,17 @@ if (isset($_POST['submit'])) {
     <input type="text" name="name" id="field">
 
     <input type="text" name="surname" id="field">
-    <input type="text" name="email" id="field">
+    <input type="text" name="email" id="email">
     <input type="text" name="business" id="field">
     <input type="text" name="phone" id="field">
-    <input type="text" name="password" id="field">
+    <input type="password" name="password" id="field">
+
+    <div id="checklist">
+        <p id="length">x 8 tekens lang</p>
+        <p id="capital">x 1 hoofdletter</p>
+        <p id="spec">x 1 speciaal teken</p>
+    </div>
+
     <input type="text" name="confirm_password" id="field">
     <button type="submit" id="submit_button">Registreer</button>
 </form>

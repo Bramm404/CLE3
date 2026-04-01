@@ -18,8 +18,10 @@ if(isset($_POST['submit'])) {
         $result = mysqli_query($db, $query);
 
         if (mysqli_num_rows($result) === 1) {
+
             $client = mysqli_fetch_assoc($result);
             $hash = $client['password'];
+
             if (password_verify($pass, $hash)) {
                 $_SESSION['login'] = true;
                 $_SESSION['email'] = $client['email'];

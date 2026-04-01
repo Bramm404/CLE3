@@ -1,0 +1,35 @@
+window.addEventListener('load', init)
+
+function init() {
+
+    const passwordField = document.querySelector('input[name="password"]');
+
+    passwordField.addEventListener('input', () => {
+
+        const password = passwordField.value
+
+        const hasLength = password.length >= 8
+        const hasCapital = /[A-Z]/.test(password)
+        const hasSpecial = /[!@#$%^&*,.?:]/.test(password)
+
+        updateCheck('#length', hasLength)
+        updateCheck('#capital', hasCapital)
+        updateCheck('#spec', hasSpecial)
+
+    })
+
+}
+
+
+function updateCheck(selector, isMet) {
+    const element = document.querySelector(selector)
+
+    if (isMet) {
+        element.classList.add('met')
+        element.textContent = element.textContent.replace('x', '✓' )
+    } else {
+        element.classList.remove('met')
+        element.textContent = element.textContent.replace ('✓', 'x')
+    }
+
+}

@@ -30,9 +30,9 @@ if(isset($_POST['name'])) {
         $errors['password'] = "Minstens één cijfer";
     } else if (!preg_match('/[A-Z]/', $_POST['password'])) {
         $errors['password'] = "Minstens één hoofdletter";
-    } else if (!preg_match('/[!@#$%^&*(),.?:]/', $_POST['password'])) {
+    } else if (!preg_match('/[!@#$%^&*,.?:]/', $_POST['password'])) {
         $errors['password'] = "Wachtwoord moet minstens één speciaal teken bevatten";
-    } else if (preg_match('/[<>{}()]"]/', $_POST['password'])) {
+    } else if (preg_match('/[[<>{}()]"]/', $_POST['password'])) {
         $errors['password'] = "Ongeldig teken";
     } else if (str_contains($_POST['password'], ' ')) {
         $errors['password'] = "Wachtwoord mag geen spaties bevatten";
