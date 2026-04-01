@@ -56,7 +56,7 @@ if(isset($_POST['submit'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Login </title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/main.js" defer></script>
+    <script src="js/register.js" defer></script>
 </head>
 <body>
 
@@ -75,7 +75,7 @@ if(isset($_POST['submit'])) {
             <p class="error"> <?= $errors['password'] ?? ''?></p>
         </div>
 
-        <button type="submit">Log in</button>
+        <button type="submit" name="submit">Log in</button>
 
     </form>
 </main>
