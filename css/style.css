@@ -4,7 +4,7 @@
 /*nexa*/
 @font-face {
     font-family: "Nexa Heavy";
-    src: url("fonts/Nexa-Heavy.ttf") format("truetype");
+    src: url("fonts/Nexa/Nexa-Heavy.ttf") format("truetype");
 }
 
 #checklist p.met {
@@ -18,7 +18,7 @@
 body {
     margin: 20px;
     background-color: #F9FAF6;
-    font-family: "Nexa Heavy";
+    font-family: "Nexa Heavy", sans-serif;
     color: #6B6A68;
 }
 
@@ -33,7 +33,7 @@ nav a {
     padding: 25px 50px;
     color: #82AC7A;
     text-decoration: none;
-    font-family: "Nexa Heavy";
+    font-family: "Nexa Heavy", sans-serif;
 }
 
 nav a:hover {
@@ -73,7 +73,7 @@ main {
 }
 
 p {
-    font-family: Roboto;
+    font-family: "Roboto", sans-serif;
 }
 
 .product-preview {
@@ -89,7 +89,7 @@ p {
     background-color: #82AC7A;
     color: #F9FAF6;
     text-decoration: none;
-    font-family: "Nexa Heavy";
+    font-family: "Nexa Heavy", sans-serif;
     border-radius: 5px;
 }
 
