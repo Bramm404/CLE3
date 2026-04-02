@@ -1,3 +1,6 @@
+/*roboto*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 #checklist p.met {
     color: greenyellow;
 }
@@ -5,9 +8,6 @@
 .error {
     color: red;
 }
-
-/*roboto*/
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 body {
     margin: 20px;

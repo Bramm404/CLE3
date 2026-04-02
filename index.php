@@ -10,7 +10,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Online Service</title>
+    <title>De Geldige Lift</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -28,7 +28,7 @@
 <main>
     <header>
         <!--        <img src="images/leafs.png">-->
-        <h1>Online service</h1>
+        <h1>De Geldige Lift</h1>
     </header>
 
     <section class="product-preview">
@@ -88,7 +88,7 @@
         <img src="#">
         <img src="#">
 
-        <p>@Our Product</p>
+        <p>@DeGeldigeLift</p>
     </div>
 </footer>
 </body>
