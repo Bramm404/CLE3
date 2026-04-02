@@ -1,6 +1,12 @@
 /*roboto*/
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+/*nexa*/
+@font-face {
+    font-family: "Nexa Heavy";
+    src: url("fonts/Nexa-Heavy.ttf") format("truetype");
+}
+
 #checklist p.met {
     color: greenyellow;
 }
