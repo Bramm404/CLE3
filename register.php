@@ -90,8 +90,9 @@ if (isset($_POST['submit'])) {
     <div>
         <label for="email">E-Mail*</label>
         <input type="text" name="email" class="email" value="<?= $email ?? ''?>">
-        <p class="error"><?=$errors['email'] ?? '' ?></p>
+        <p class="error"> <?=$errors['email'] ?? '' ?> </p>
     </div>
+
 
     <div>
         <label for="business">Bedrijf</label>
@@ -107,7 +108,7 @@ if (isset($_POST['submit'])) {
 
     <div>
         <label for="confirm_password">Wachtwoord bevestigen</label>
-        <input type="text" name="confirm_password" class="field">
+        <input type="password" name="confirm_password" class="field">
         <div id="checklist">
             <p id="length">x 8 tekens lang</p>
             <p id="capital">x 1 hoofdletter</p>

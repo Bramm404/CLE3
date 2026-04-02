@@ -20,6 +20,10 @@ if(isset($_POST['name'])) {
         $errors['email'] = "Ongeldige email";
     }
 
+    if(empty($_POST['business'])) {
+        $errors['business'] = "Een bedrijf is verplicht";
+    }
+
 
     /** Wachtwoord validatie */
     if (empty($_POST['password'])) {
