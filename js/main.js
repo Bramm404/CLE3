@@ -11,8 +11,9 @@ function init() {
     })
 
     dialog.addEventListener('click', (e) => {
-        console.log(e.target);
-        //dialog.close();
+        if(e.target === dialog) {
+            dialog.close();
+        }
     })
 }
 

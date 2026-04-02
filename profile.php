@@ -25,6 +25,8 @@
     </header>
 
     <h2>Onze doelen</h2>
+
+    <a href="logout.php">log uit</a>
 </main>
 
 <footer>
