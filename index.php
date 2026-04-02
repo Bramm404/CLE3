@@ -11,7 +11,8 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>De Geldige Lift</title>
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
 </head>
 <body>
 <nav>
@@ -21,7 +22,7 @@
         <a href="product.php">Ons product</a>
         <a href="about.php">Over ons</a>
         <a href="profile.php">Mijn profiel</a>
-        <a href="#" class="log-in-button">Log in</a>
+        <a href="#" class="log-in-button" id="loginBtn">Log in</a>
     </div>
 </nav>
 
@@ -75,6 +76,30 @@
             <button type="submit" class="submit-btn">Versturen</button>
         </form>
     </section>
+
+    <section>
+        <dialog>
+        <div>
+            <form action="" method="post">
+                <div>
+                    <label for="user">E-Mail</label>
+                    <input type="text" name="user" class="field" id="name" value="<?= $user ?? ''?>">
+                        <p class="error"> <?= $errors['user'] ?? ''?></p>
+                </div>
+
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" name="password" class="field" id="password">
+                        <p class="error"> <?= $errors['password'] ?? ''?></p>
+                </div>
+
+                <button type="submit" name="submit">Log in</button>
+
+            </form>
+        </div>
+         </dialog>
+    </sectioN>
+
 </main>
 
 <footer>
