@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 31, 2026 at 09:22 AM
+-- Generation Time: Apr 02, 2026 at 09:16 AM
 -- Server version: 8.4.2
 -- PHP Version: 8.4.19
 
@@ -33,11 +33,19 @@ CREATE TABLE `users` (
   `id` int UNSIGNED NOT NULL,
   `name` varchar(255) NOT NULL,
   `surname` varchar(255) NOT NULL,
-  `e-mail` varchar(255) NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `business_name` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `phone` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `surname`, `email`, `business_name`, `password`, `phone`) VALUES
+(1, 'w', 'b', 'wb@bw.nl', 'lol', '$2y$12$gQMYTFXPzgCCg2vYwPadZ.UCQB5xnBFWIbnkK3YObbgYpXAteiux.', '0312213'),
+(2, 'Bram', 'den Boer', 'b@c.nl', 'Lol', '$2y$12$0Dy94UYF0v9bx5XvjX4i7eOfdw7iV4NjYx0FcBXS9fHzrzhIrVW62', '042');
 
 --
 -- Indexes for dumped tables
@@ -57,7 +65,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
