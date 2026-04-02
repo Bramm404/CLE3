@@ -1,5 +1,41 @@
 <?php
 
+if (isset($_SESSION['login'])) {
+    $login = true;
+}
+
+$errors = [];
+
+if(isset($_POST['submit'])) {
+    require_once 'includes/db.php';
+    $user = mysqli_real_escape_string($db, $_POST['user']);
+    $pass = mysqli_real_escape_string($db, $_POST['password']);
+    require_once 'includes/formvalidator.php';
+
+    if(empty($errors)) {
+        $query = "SELECT * FROM users WHERE email = '$user'";
+        $result = mysqli_query($db, $query);
+
+        if (mysqli_num_rows($result) === 1) {
+
+            $client = mysqli_fetch_assoc($result);
+            $hash = $client['password'];
+
+            if (password_verify($pass, $hash)) {
+                $_SESSION['login'] = true;
+                $_SESSION['email'] = $client['email'];
+                $_SESSION['name'] = $client['name'];
+                $_SESSION['surname'] = $client['surname'];
+
+
+            } else {
+                $errors['password'] = "Wachtwoord is onjuist";
+            }
+        } else {
+            $errors['user'] = "Geen gebruiker gevonden";
+        }
+    }
+}
 
 ?>
 
@@ -22,7 +58,12 @@
         <a href="product.php">Ons product</a>
         <a href="about.php">Over ons</a>
         <a href="profile.php">Mijn profiel</a>
-        <a href="#" class="log-in-button" id="loginBtn">Log in</a>
+
+        <?php if (!isset($_SESSION['login'])) { ?>
+        <button class="log-in-button" id="loginBtn">Log in</button>
+        <?php } else {?>
+        <a href="profile.php" class="log-in-button">Mijn profiel</a>
+        <?php } ?>
     </div>
 </nav>
 
@@ -49,11 +90,12 @@
         <form>
             <div class="details">
                 <div class="first-name-last-name">
+
                     <label for="firstName">voornaam</label>
-                    <input type="text" id="firstName" name="firstName">
+                    <input type="text" id="firstName" name="firstName" value="<?php if(isset($_SESSION['login'])) {echo $_SESSION['name'];} else {echo ''; } ?>">
 
                     <label for="lastName">achternaam</label>
-                    <input type="text" id="lastName" name="lastName">
+                    <input type="text" id="lastName" name="lastName" value="<?php if(isset($_SESSION['login'])) {echo $_SESSION['surname'];} else {echo ''; } ?>">
                 </div>
 
                 <label for="email">emailadres</label>
@@ -79,7 +121,7 @@
 
     <section>
         <dialog>
-        <div>
+        <div id="loginContainer">
             <form action="" method="post">
                 <div>
                     <label for="user">E-Mail</label>
