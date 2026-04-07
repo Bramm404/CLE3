@@ -11,7 +11,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>De Geldige Lift</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="CSS/style.css">
     <script src="js/main.js" defer></script>
 </head>
 <body>
@@ -26,12 +26,11 @@
     </div>
 </nav>
 
-<main>
-    <header>
-        <!--        <img src="images/leafs.png">-->
-        <h1>De Geldige Lift</h1>
-    </header>
+<header class="hero">
+    <h1 class="home-page-h1">De Geldige Lift</h1>
+</header>
 
+<main>
     <section class="product-preview">
         <div>
             <h2>Ons product</h2>
@@ -42,7 +41,7 @@
         <img src="images/sketch.jpg">
     </section>
 
-    <section class="form">
+    <section class="form-section">
         <h2>Contact</h2>
         <p>Heeft u een vraag? Neem dan contact met ons op:</p>
 

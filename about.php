@@ -24,6 +24,25 @@
     <header>
         <h1>Over ons</h1>
     </header>
+
+    <h2>Onze doelen</h2>
+
+    <section class="content-and-image">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vestibulum consequat ligula, vitae bibendum enim vestibulum ac. Ut posuere libero diam, pretium malesuada nibh pharetra in. Phasellus at ante justo. Duis eu nisi non mauris ultrices condimentum. In posuere augue sed metus tincidunt, a vulputate urna sodales.</p>
+        <img src="images/sketch.jpg">
+    </section>
+
+    <section class="content-and-image-right">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vestibulum consequat ligula, vitae bibendum enim vestibulum ac. Ut posuere libero diam, pretium malesuada nibh pharetra in. Phasellus at ante justo. Duis eu nisi non mauris ultrices condimentum. In posuere augue sed metus tincidunt, a vulputate urna sodales.</p>
+        <img src="images/sketch.jpg">
+    </section>
+
+    <section class="content-and-image">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vestibulum consequat ligula, vitae bibendum enim vestibulum ac. Ut posuere libero diam, pretium malesuada nibh pharetra in. Phasellus at ante justo. Duis eu nisi non mauris ultrices condimentum. In posuere augue sed metus tincidunt, a vulputate urna sodales.</p>
+        <img src="images/sketch.jpg">
+    </section>
+
+
 </main>
 
 <footer>
