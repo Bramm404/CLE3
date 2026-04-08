@@ -1,43 +1,43 @@
 <?php
-/** @var $db */
-
-if (isset($_SESSION['login'])) {
-    $login = true;
-}
-
-$errors = [];
-
-if(isset($_POST['submit'])) {
-    require_once 'includes/db.php';
-    $user = mysqli_real_escape_string($db, $_POST['user']);
-    $pass = mysqli_real_escape_string($db, $_POST['password']);
-    require_once 'includes/formvalidator.php';
-
-    if(empty($errors)) {
-        $query = "SELECT * FROM users WHERE email = '$user'";
-        $result = mysqli_query($db, $query);
-
-        if (mysqli_num_rows($result) === 1) {
-
-            $client = mysqli_fetch_assoc($result);
-            $hash = $client['password'];
-
-            if (password_verify($pass, $hash)) {
-                $_SESSION['login'] = true;
-                $_SESSION['email'] = $client['email'];
-                $_SESSION['name'] = $client['name'];
-                $_SESSION['surname'] = $client['surname'];
-
-
-            } else {
-                $errors['password'] = "Wachtwoord is onjuist";
-            }
-        } else {
-            $errors['user'] = "Geen gebruiker gevonden";
-        }
-    }
-}
-
+///** @var $db */
+//
+//if (isset($_SESSION['login'])) {
+//    $login = true;
+//}
+//
+//$errors = [];
+//
+//if(isset($_POST['submit'])) {
+//    require_once 'includes/db.php';
+//    $user = mysqli_real_escape_string($db, $_POST['user']);
+//    $pass = mysqli_real_escape_string($db, $_POST['password']);
+//    require_once 'includes/formvalidator.php';
+//
+//    if(empty($errors)) {
+//        $query = "SELECT * FROM users WHERE email = '$user'";
+//        $result = mysqli_query($db, $query);
+//
+//        if (mysqli_num_rows($result) === 1) {
+//
+//            $client = mysqli_fetch_assoc($result);
+//            $hash = $client['password'];
+//
+//            if (password_verify($pass, $hash)) {
+//                $_SESSION['login'] = true;
+//                $_SESSION['email'] = $client['email'];
+//                $_SESSION['name'] = $client['name'];
+//                $_SESSION['surname'] = $client['surname'];
+//
+//
+//            } else {
+//                $errors['password'] = "Wachtwoord is onjuist";
+//            }
+//        } else {
+//            $errors['user'] = "Geen gebruiker gevonden";
+//        }
+//    }
+//}
+        require_once 'includes/login.php';
 ?>
 
 <!doctype html>
@@ -105,21 +105,22 @@ if(isset($_POST['submit'])) {
         </form>
     </section>
 
-    <section>
+    <?php require_once 'includes/login.php'?>
+<!--    <section>
         <dialog>
         <div id="loginContainer">
             <h2>Login</h2>
             <form action="" method="post">
                 <div class="fieldDiv">
                     <label for="user">E-Mail</label>
-                    <input type="text" name="user" class="field" id="name" value="<?= $user ?? ''?>">
-                        <p class="error"> <?= $errors['user'] ?? ''?></p>
+                    <input type="text" name="user" class="field" id="name" value="<?php /*= $user ?? ''*/?>">
+                        <p class="error"> <?php /*= $errors['user'] ?? ''*/?></p>
                 </div>
 
                 <div class="fieldDiv">
                     <label for="password">Password</label>
                     <input type="password" name="password" class="field" id="password">
-                        <p class="error"> <?= $errors['password'] ?? ''?></p>
+                        <p class="error"> <?php /*= $errors['password'] ?? ''*/?></p>
                 </div>
 
                 <button type="submit" name="submit" id="submitBtn">Log in</button>
@@ -131,7 +132,7 @@ if(isset($_POST['submit'])) {
             </div>
         </div>
         </dialog>
-    </sectioN>
+    </sectioN>-->
 
 </main>
 

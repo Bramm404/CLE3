@@ -9,6 +9,16 @@ const login = document.querySelector('dialog form');
 function init() {
     checkforErrors()
 
+    const inputFields = document.querySelectorAll('dialog input')
+    inputFields.forEach(input => {
+        input.addEventListener('input', () => {
+            const errorMsg = input.closest('.fieldDiv').querySelector('.error')
+            if(errorMsg) {
+                errorMsg.textContent = '';
+            }
+        })
+    })
+
     loginBtn.addEventListener('click', () => {
         dialog.showModal()
     })

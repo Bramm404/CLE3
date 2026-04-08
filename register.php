@@ -36,10 +36,12 @@ if (isset($_POST['submit'])) {
         $errors['email'] = "Er is al een account met deze e-mail.";
     }
 
-    $query = "SELECT * FROM users WHERE phone = '$phone'";
-    $result = mysqli_query($db, $query);
-    if (mysqli_num_rows($result) > 0) {
-        $errors['phone'] = "Er is al een account met dit telefoon nummer.";
+    if(!empty($_POST['phone'])) {
+        $query = "SELECT * FROM users WHERE phone = '$phone'";
+        $result = mysqli_query($db, $query);
+        if (mysqli_num_rows($result) > 0) {
+            $errors['phone'] = "Dit telefoon nummer is al gelinked aan een account.";
+        }
     }
 
     if(empty($errors)) {
@@ -47,13 +49,13 @@ if (isset($_POST['submit'])) {
         $query = "INSERT INTO users (name, surname, email, password, business_name, phone) VALUES ('$name', '$surname', '$email', '$hashword', '$business', '$phone')";
 
         if(mysqli_query($db, $query)) {
-            header('Location: login.php');
+            header('Location: index.php');
             exit;
         } else {
             $errors['db'] = 'Er is iets fout gegaan met het toevoegen van het account.';
         }
 
-        header('Location: login.php');
+        header('Location: index.php');
         exit;
     }
 }
@@ -70,6 +72,7 @@ if (isset($_POST['submit'])) {
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/register.css">
     <script src="js/register.js" defer></script>
+    <script src="js/main.js" defer></script>
 </head>
 <body>
 
@@ -138,9 +141,9 @@ if (isset($_POST['submit'])) {
             <button type="submit" name="submit" id="submitBtn">Registreer</button>
         </form>
     </section>
-    <section id="errors">
 
-    </section>
+    <?php require_once 'includes/login.php'?>
+
 </main>
 </body>
 

@@ -1,3 +1,13 @@
+<?php
+
+if(!isset($_SESSION['login'])) {
+    header('Location: index.php');
+}
+
+?>
+
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -9,16 +19,7 @@
     <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
-<nav>
-    <img src="#">
-    <div>
-        <a href="index.php">Home</a>
-        <a href="product.php">Ons product</a>
-        <a href="about.php">Over ons</a>
-        <a href="profile.php">Mijn profiel</a>
-        <a href="#" class="log-in-button">Log in</a>
-    </div>
-</nav>
+<?php require_once 'includes/nav.php';?>
 <main>
     <header>
         <h1>Profile</h1>
