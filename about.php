@@ -7,18 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>About</title>
     <link rel="stylesheet" href="CSS/style.css">
+    <script src="js/main.js" defer></script>
 </head>
 <body>
-<nav>
-    <img src="#">
-    <div>
-        <a href="index.php">Home</a>
-        <a href="product.php">Ons product</a>
-        <a href="about.php">Over ons</a>
-        <a href="profile.php">Mijn profiel</a>
-        <a href="#" class="log-in-button">Log in</a>
-    </div>
-</nav>
+<?php include 'includes/nav.php'?>>
 
 <main>
     <header>
@@ -42,7 +34,7 @@
         <img src="images/sketch.jpg">
     </section>
 
-
+    <?php require 'includes/login.php'; ?>
 </main>
 
 <footer>

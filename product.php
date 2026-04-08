@@ -7,18 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Product</title>
     <link rel="stylesheet" href="CSS/style.css">
+    <script src="js/main.js" defer></script>
 </head>
 <body>
-<nav>
-    <img src="#">
-    <div>
-        <a href="index.php">Home</a>
-        <a href="product.php">Ons product</a>
-        <a href="about.php">Over ons</a>
-        <a href="profile.php">Mijn profiel</a>
-        <a href="#" class="log-in-button">Log in</a>
-    </div>
-</nav>
+<?php include 'includes/nav.php' ?>
 
 <main>
     <header>
@@ -32,6 +24,8 @@
     <p>Sed tempus augue et metus feugiat, ut luctus massa placerat. Vestibulum molestie pretium lobortis. Donec ut ornare leo. Cras eget ornare erat. Vivamus et purus et lacus ornare maximus. Proin ut purus in quam rutrum ultricies. Suspendisse eget purus molestie, dictum ligula at, sodales felis. Morbi in lorem nec tellus molestie ultricies. Ut vestibulum turpis lectus, id iaculis nibh tempor ut. Sed in est sem. Aenean et rhoncus tortor, vulputate pretium odio.</p>
 
     <p>Maecenas commodo velit nec tristique mattis. Morbi eu arcu purus. Suspendisse pulvinar lacus id urna imperdiet pharetra. In semper rutrum erat, vitae volutpat magna euismod a. Suspendisse accumsan sollicitudin lacus, ac porttitor nisl lobortis in. Vestibulum eros risus, molestie ac eros vitae, vulputate luctus nisi. Aenean vestibulum id augue bibendum malesuada. Suspendisse luctus magna vitae vestibulum consectetur. Phasellus malesuada pulvinar purus. Duis dictum facilisis nisl fringilla fermentum. Proin tincidunt ex sit amet tellus eleifend hendrerit. Praesent vitae tristique nisi. Proin convallis egestas velit, accumsan efficitur libero dapibus in. Maecenas sagittis interdum tellus non molestie. Maecenas ut nibh vitae tortor congue aliquam.</p>
+
+    <?php require_once 'includes/login.php'; ?>
 </main>
 
 <footer>

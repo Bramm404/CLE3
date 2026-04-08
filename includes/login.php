@@ -26,8 +26,6 @@ if(isset($_POST['submit'])) {
                 $_SESSION['email'] = $client['email'];
                 $_SESSION['name'] = $client['name'];
                 $_SESSION['surname'] = $client['surname'];
-
-
             } else {
                 $errors['password'] = "Wachtwoord is onjuist";
             }
@@ -55,9 +53,7 @@ if(isset($_POST['submit'])) {
                             <input type="password" name="password" class="field" id="password">
                             <p class="error"> <?= $errors['password'] ?? ''?></p>
                         </div>
-
                         <button type="submit" name="submit" id="submitBtn">Log in</button>
-
                     </form>
                     <div id="registerDiv">
                         <p>Nog geen account?</p>
