@@ -122,24 +122,29 @@ if(isset($_POST['submit'])) {
     <section>
         <dialog>
         <div id="loginContainer">
+            <h2>Login</h2>
             <form action="" method="post">
-                <div>
+                <div class="fieldDiv">
                     <label for="user">E-Mail</label>
                     <input type="text" name="user" class="field" id="name" value="<?= $user ?? ''?>">
                         <p class="error"> <?= $errors['user'] ?? ''?></p>
                 </div>
 
-                <div>
+                <div class="fieldDiv">
                     <label for="password">Password</label>
                     <input type="password" name="password" class="field" id="password">
                         <p class="error"> <?= $errors['password'] ?? ''?></p>
                 </div>
 
-                <button type="submit" name="submit">Log in</button>
+                <button type="submit" name="submit" id="popupBtn">Log in</button>
 
             </form>
+            <div id="registerDiv">
+                <p>Nog geen account?</p>
+                <a href="register.php">Registreer nu!</a>
+            </div>
         </div>
-         </dialog>
+        </dialog>
     </sectioN>
 
 </main>
