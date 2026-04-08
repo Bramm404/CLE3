@@ -4,8 +4,6 @@
         <a href="index.php">Home</a>
         <a href="product.php">Ons product</a>
         <a href="about.php">Over ons</a>
-        <a href="profile.php">Mijn profiel</a>
-
         <?php if (!isset($_SESSION['login'])) { ?>
             <button class="log-in-button" id="loginBtn">Log in</button>
         <?php } else {?>
