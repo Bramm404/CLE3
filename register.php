@@ -66,69 +66,82 @@ if (isset($_POST['submit'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Hoofdpagina </title>
-    <link rel="stylesheet" href="CSS/style.css">
+    <title> De Geldige Lift - Registreren </title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/register.css">
     <script src="js/register.js" defer></script>
 </head>
 <body>
 
+<?php require_once "includes/nav.php"; ?>
+
+<header>
+    <h1>Registreer</h1>
+</header>
+
 <p><?= $errors['db'] ?? ''?></p>
+<main>
+    <section id="form">
+        <form action="" method="post">
+            <div class="fieldDiv">
+                <label for="name">Voornaam*</label>
+                <input type="text" name="name" class="field" value="<?= $name ?? ''?>">
+                <p class="error"><?= $errors['name'] ?? '' ?></p>
+            </div>
 
-<form action="" method="post">
-    <div>
-        <label for="name">Voornaam*</label>
-        <input type="text" name="name" class="field" value="<?= $name ?? ''?>">
-        <p class="error"><?= $errors['name'] ?? '' ?></p>
-    </div>
+            <div class="fieldDiv">
+                <label for="surname">Achternaam*</label>
+                <input type="text" name="surname" class="field" value="<?= $surname ?? ''?>">
+                <p class="error"><?= $errors['surname'] ?? '' ?></p>
+            </div>
 
-    <div>
-        <label for="surname">Achternaam*</label>
-        <input type="text" name="surname" class="field" value="<?= $surname ?? ''?>">
-        <p class="error"><?= $errors['surname'] ?? '' ?></p>
-    </div>
-
-    <div>
-        <label for="email">E-Mail*</label>
-        <input type="text" name="email" class="email" value="<?= $email ?? ''?>">
-        <p class="error"> <?=$errors['email'] ?? '' ?> </p>
-    </div>
-
-
-    <div>
-        <label for="business">Bedrijf</label>
-        <input type="text" name="business" class="field" value="<?= $business ?? '' ?>">
-        <p class="error"><?=$errors['business'] ?? ''?></p>
-    </div>
-
-    <div>
-
-        <label for="password">Wachtwoord</label>
-        <input type="password" name="password" class="field">
-    </div>
-
-    <div>
-        <label for="confirm_password">Wachtwoord bevestigen</label>
-        <input type="password" name="confirm_password" class="field">
-        <div id="checklist">
-            <p id="length">x 8 tekens lang</p>
-            <p id="capital">x 1 hoofdletter</p>
-            <p id="number">x 1 cijfer</p>
-            <p id="spec">x 1 speciaal teken</p>
-        </div>
-        <p class="error"> <?= $errors['password'] ?? ''?></p>
-        <p class="error"> <?= $errors['confirm_password'] ?? ''?></p>
-    </div>
-
-    <div>
-        <label for="phone">Telefoonnummer</label>
-        <input type="text" name="phone" class="field" value="<?= $phone ?? '' ?>">
-        <p class="error"> <?= $errors['phone'] ?? ''?></p>
-    </div>
+            <div class="fieldDiv">
+                <label for="email">E-Mail*</label>
+                <input type="text" name="email" class="email" value="<?= $email ?? ''?>">
+                <p class="error"> <?=$errors['email'] ?? '' ?> </p>
+            </div>
 
 
+            <div class="fieldDiv">
+                <label for="business">Bedrijf</label>
+                <input type="text" name="business" class="field" value="<?= $business ?? '' ?>">
+                <p class="error"><?=$errors['business'] ?? ''?></p>
+            </div>
 
-    <button type="submit" name="submit" id="submit_button">Registreer</button>
-</form>
+            <div class="fieldDiv">
+                <label for="password">Wachtwoord</label>
+                <input type="password" name="password" class="field">
+            </div>
+
+            <div class="fieldDiv">
+                <label for="confirm_password">Wachtwoord bevestigen</label>
+                <input type="password" name="confirm_password" class="field">
+                <div id="checklist">
+                    <p>Het wachtwoord moet het volgende bevatten:</p>
+                    <p id="length">x 8 tekens lang</p>
+                    <p id="capital">x 1 hoofdletter</p>
+                    <p id="number">x 1 cijfer</p>
+                    <p id="spec">x 1 speciaal teken</p>
+                </div>
+                <p class="error"> <?= $errors['password'] ?? ''?></p>
+                <p class="error"> <?= $errors['confirm_password'] ?? ''?></p>
+            </div>
+
+            <div class="fieldDiv">
+                <label for="phone">Telefoonnummer</label>
+                <input type="text" name="phone" class="field" value="<?= $phone ?? '' ?>">
+                <p class="error"> <?= $errors['phone'] ?? ''?></p>
+            </div>
+
+
+
+            <button type="submit" name="submit" id="submitBtn">Registreer</button>
+        </form>
+    </section>
+    <section id="errors">
+
+    </section>
+</main>
 </body>
 
 

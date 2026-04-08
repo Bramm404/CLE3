@@ -52,21 +52,7 @@ if(isset($_POST['submit'])) {
     <script src="js/main.js" defer></script>
 </head>
 <body>
-<nav>
-    <img src="#">
-    <div>
-        <a href="index.php">Home</a>
-        <a href="product.php">Ons product</a>
-        <a href="about.php">Over ons</a>
-        <a href="profile.php">Mijn profiel</a>
-
-        <?php if (!isset($_SESSION['login'])) { ?>
-        <button class="log-in-button" id="loginBtn">Log in</button>
-        <?php } else {?>
-        <a href="profile.php" class="log-in-button">Mijn profiel</a>
-        <?php } ?>
-    </div>
-</nav>
+<?php require_once 'includes/nav.php'?>
 
 <header class="hero">
     <h1 class="home-page-h1">De Geldige Lift</h1>
@@ -136,7 +122,7 @@ if(isset($_POST['submit'])) {
                         <p class="error"> <?= $errors['password'] ?? ''?></p>
                 </div>
 
-                <button type="submit" name="submit" id="popupBtn">Log in</button>
+                <button type="submit" name="submit" id="submitBtn">Log in</button>
 
             </form>
             <div id="registerDiv">

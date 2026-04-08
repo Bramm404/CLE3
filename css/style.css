@@ -7,9 +7,6 @@
     src: url("fonts/Nexa/Nexa-Heavy.ttf") format("truetype");
 }
 
-#checklist p.met {
-    color: greenyellow;
-}
 
 .error {
     color: red;
@@ -77,7 +74,7 @@ header h1 {
 }
 
 main {
-    margin: 0px 80px 0px 80px;
+    margin: 0px 5vw;
 }
 
 p {
@@ -200,13 +197,14 @@ dialog {
     flex: 1;
     margin: 0;
     padding: 5px 0;
+    width: 35vw;
 }
 
 .fieldDiv input {
-    width: 35vw;
+    width: 100%;
     height: 40px;
     margin: 0;
-    padding: 0 5px;
+    padding: 0;
 }
 
 #registerDiv {
@@ -223,10 +221,10 @@ dialog {
 }
 
 
-#popupBtn {
+#submitBtn {
     margin: 0;
     padding: 0;
-    width: calc(35vw + 10px);
+    width: 100%;
     height: 5vh;
     background-color: #5B8055;
     color: #F9FAF6;
