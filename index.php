@@ -74,35 +74,44 @@
         <p>Heeft u een vraag? Neem dan contact met ons op:</p>
 
         <form>
-            <div class="details">
+            <div class="form-details">
                 <div class="first-name-last-name">
+                    <div class="form-field-div">
+                        <label for="firstName">voornaam</label>
+                        <input type="text" id="firstName" name="firstName" value="<?php if(isset($_SESSION['login'])) {echo $_SESSION['name'];} else {echo ''; } ?>">
+                    </div>
 
-                    <label for="firstName">voornaam</label>
-                    <input type="text" id="firstName" name="firstName" value="<?php if(isset($_SESSION['login'])) {echo $_SESSION['name'];} else {echo ''; } ?>">
-
-                    <label for="lastName">achternaam</label>
-                    <input type="text" id="lastName" name="lastName" value="<?php if(isset($_SESSION['login'])) {echo $_SESSION['surname'];} else {echo ''; } ?>">
+                    <div class="form-field-div">
+                        <label for="lastName">achternaam</label>
+                        <input type="text" id="lastName" name="lastName" value="<?php if(isset($_SESSION['login'])) {echo $_SESSION['surname'];} else {echo ''; } ?>">
+                    </div>
                 </div>
 
-                <label for="email">emailadres</label>
-                <input type="email" id="email" name="email">
+                <div class="form-field-div">
+                    <label for="email">emailadres</label>
+                    <input type="email" id="email" name="email">
+                </div>
 
                 <div class="address-home-number">
-                    <label for="address">adres en huisnummer</label>
-                    <input type="text" id="address" name="address">
+                    <div class="form-field-div">
+                        <label for="address">adres en huisnummer</label>
+                        <input type="text" id="address" name="address">
+                    </div>
 
-                    <label for="city">postcode en stad</label>
-                    <input type="text" id="city" name="city">
+                    <div class="form-field-div">
+                        <label for="city">postcode en stad</label>
+                        <input type="text" id="city" name="city">
+                    </div>
                 </div>
             </div>
 
-            <div class="question-text-area">
+            <div class="question-text-area form-field-div">
                 <label for="question">uw vraag</label>
                 <textarea id="question" name="question"></textarea>
             </div>
-
-            <button type="submit" class="submit-btn">Versturen</button>
         </form>
+
+        <button type="submit">Versturen</button>
     </section>
 
     <?php require_once 'includes/login.php'?>
