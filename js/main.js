@@ -3,6 +3,7 @@ window.addEventListener('load', init)
 const loginBtn = document.querySelector('#loginBtn')
 const dialog = document.querySelector('dialog')
 const login = document.querySelector('dialog form');
+const closeBtn = document.querySelector('.close-dialog')
 
 
 
@@ -19,8 +20,14 @@ function init() {
         })
     })
 
+    closeBtn.addEventListener('click', () => {
+        dialog.close();
+    })
+
     loginBtn.addEventListener('click', () => {
+
         dialog.showModal()
+
     })
 
     dialog.addEventListener('click', (e) => {
@@ -34,6 +41,9 @@ function init() {
             e.preventDefault()
         }
     })
+
+
+
 }
 
 function checkforErrors() {
@@ -41,7 +51,7 @@ function checkforErrors() {
     let hasError = false;
 
     errors.forEach(error => {
-        if(error.textContent.trim() != '') {
+        if(error.textContent.trim() !== '') {
             hasError = true;
         }
     })
@@ -53,4 +63,6 @@ function checkforErrors() {
 
     return hasError
 }
+
+
 
