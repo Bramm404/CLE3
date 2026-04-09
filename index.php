@@ -27,12 +27,7 @@ if (isset($_POST['contactsubmit'])) {
     <section class="product-preview">
         <div>
             <h2>Ons product</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vestibulum consequat ligula, vitae
-                bibendum enim vestibulum ac. Ut posuere libero diam, pretium malesuada nibh pharetra in. Phasellus at
-                ante justo. Duis eu nisi non mauris ultrices condimentum. In posuere augue sed metus tincidunt, a
-                vulputate urna sodales. Cras hendrerit ullamcorper lorem, sit amet tincidunt sem luctus in. Sed
-                efficitur nisi non quam ultricies, id mattis sem malesuada. Donec luctus placerat sollicitudin.
-                Phasellus nec neque et leo condimentum auctor commodo nec ligula.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vestibulum consequat ligula, vitae bibendum enim vestibulum ac. Ut posuere libero diam, pretium malesuada nibh pharetra in. Phasellus at ante justo. Duis eu nisi non mauris ultrices condimentum. In posuere augue sed metus tincidunt, a vulputate urna sodales. Cras hendrerit ullamcorper lorem, sit amet tincidunt sem luctus in. Sed efficitur nisi non quam ultricies, id mattis sem malesuada. Donec luctus placerat sollicitudin. Phasellus nec neque et leo condimentum auctor commodo nec ligula.</p>
             <a href="#">Ga naar pagina</a>
         </div>
 
@@ -43,38 +38,39 @@ if (isset($_POST['contactsubmit'])) {
         <h2>Contact</h2>
         <p>Heeft u een vraag? Neem dan contact met ons op:</p>
 
-        <form method="post">
-            <div class="details">
+        <form>
+            <div class="form-details">
                 <div class="first-name-last-name">
+                    <div class="form-field-div">
+                        <label for="firstName">voornaam</label>
+                        <input type="text" id="firstName" name="firstName" value="<?php if(isset($_SESSION['login'])) {echo $_SESSION['name'];} else {echo ''; } ?>">
+                    </div>
 
-                    <label for="firstName">voornaam</label>
-                    <input type="text" id="firstName" name="firstName" value="<?php if (isset($_SESSION['login'])) {
-                        echo $_SESSION['name'];
-                    } else {
-                        echo '';
-                    } ?>">
-
-                    <label for="lastName">achternaam</label>
-                    <input type="text" id="lastName" name="lastName" value="<?php if (isset($_SESSION['login'])) {
-                        echo $_SESSION['surname'];
-                    } else {
-                        echo '';
-                    } ?>">
+                    <div class="form-field-div">
+                        <label for="lastName">achternaam</label>
+                        <input type="text" id="lastName" name="lastName" value="<?php if(isset($_SESSION['login'])) {echo $_SESSION['surname'];} else {echo ''; } ?>">
+                    </div>
                 </div>
 
-                <label for="email">E-mailadres</label>
-                <input type="email" id="email" name="email">
+                <div class="form-field-div">
+                    <label for="email">emailadres</label>
+                    <input type="email" id="email" name="email">
+                </div>
 
                 <div class="address-home-number">
-                    <label for="address">Adres en Huisnummer</label>
-                    <input type="text" id="address" name="address">
+                    <div class="form-field-div">
+                        <label for="address">adres en huisnummer</label>
+                        <input type="text" id="address" name="address">
+                    </div>
 
-                    <label for="city">Postcode en Stad</label>
-                    <input type="text" id="city" name="city">
+                    <div class="form-field-div">
+                        <label for="city">postcode en stad</label>
+                        <input type="text" id="city" name="city">
+                    </div>
                 </div>
             </div>
 
-            <div class="question-text-area">
+            <div class="question-text-area form-field-div">
                 <label for="question">uw vraag</label>
                 <textarea id="question" name="question"></textarea>
             </div>
