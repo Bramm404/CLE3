@@ -1,8 +1,46 @@
 <?php
 session_start();
-if (isset($_POST['contactsubmit'])) {
 
+
+$errors = [];
+
+
+if (isset($_POST['contact-submit'])) {
+    /** @var $db */
+
+    require_once 'includes/db.php';
+    $name = mysqli_real_escape_string($db, $_POST['firstName']) ;
+    $surname = mysqli_real_escape_string($db, $_POST['lastName']);
+    $email = mysqli_real_escape_string($db, $_POST['email']) ;
+    $address = mysqli_real_escape_string($db, $_POST['address']) ;
+    $housenum = mysqli_real_escape_string($db, $_POST['houseNumber']);
+    $zipcode = mysqli_real_escape_string($db, $_POST['zipcode']);
+    $city = mysqli_real_escape_string($db,$_POST['city']);
+    $question = mysqli_real_escape_string($db, $_POST['question']);
+
+    require_once "includes/formvalidator.php";
+
+        if(empty($errors)) {
+
+            $query = "SELECT * FROM users WHERE email = '$email'";
+            $result = mysqli_query($db, $query);
+            if (mysqli_num_rows($result) > 0) {
+                $userid = mysqli_fetch_assoc($result)['id'];
+            } else {
+                $userid = NULL;
+            }
+
+            $fulladdress = ($address . ' ' . $housenum . ', ' . $zipcode . ', ' . $city);
+            $query = "INSERT INTO messages (user, name, surname, email, address, message) VALUES ('$userid', '$name', '$surname', '$email', '$fulladdress', '$question')";
+
+
+            mysqli_query($db, $query);
+            mysqli_close($db);
+
+
+        }
 }
+
 ?>
 
 <!doctype html>
@@ -27,7 +65,12 @@ if (isset($_POST['contactsubmit'])) {
     <section class="product-preview">
         <div>
             <h2>Ons product</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vestibulum consequat ligula, vitae bibendum enim vestibulum ac. Ut posuere libero diam, pretium malesuada nibh pharetra in. Phasellus at ante justo. Duis eu nisi non mauris ultrices condimentum. In posuere augue sed metus tincidunt, a vulputate urna sodales. Cras hendrerit ullamcorper lorem, sit amet tincidunt sem luctus in. Sed efficitur nisi non quam ultricies, id mattis sem malesuada. Donec luctus placerat sollicitudin. Phasellus nec neque et leo condimentum auctor commodo nec ligula.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vestibulum consequat ligula, vitae
+                bibendum enim vestibulum ac. Ut posuere libero diam, pretium malesuada nibh pharetra in. Phasellus at
+                ante justo. Duis eu nisi non mauris ultrices condimentum. In posuere augue sed metus tincidunt, a
+                vulputate urna sodales. Cras hendrerit ullamcorper lorem, sit amet tincidunt sem luctus in. Sed
+                efficitur nisi non quam ultricies, id mattis sem malesuada. Donec luctus placerat sollicitudin.
+                Phasellus nec neque et leo condimentum auctor commodo nec ligula.</p>
             <a href="#">Ga naar pagina</a>
         </div>
 
@@ -38,44 +81,54 @@ if (isset($_POST['contactsubmit'])) {
         <h2>Contact</h2>
         <p>Heeft u een vraag? Neem dan contact met ons op:</p>
 
-        <form>
+        <form method="POST">
             <div class="form-details">
-                <div class="first-name-last-name">
-                    <div class="form-field-div">
-                        <label for="firstName">voornaam</label>
-                        <input type="text" id="firstName" name="firstName" value="<?php if(isset($_SESSION['login'])) {echo $_SESSION['name'];} else {echo ''; } ?>">
+                <div id="leftSide">
+                    <div class="first-name-last-name">
+                        <div class="form-field-div">
+                            <label for="firstName">Voornaam*</label>
+                            <input type="text" id="firstName" name="firstName" value="<?= $_SESSION['name'] ?? '' ?>" placeholder="<?= $errors['firstName'] ?? '' ?>">
+                        </div>
+
+                        <div class="form-field-div">
+                            <label for="lastName">Achternaam*</label>
+                            <input type="text" id="lastName" name="lastName" value="<?= $_SESSION['surname'] ?? '' ?>" placeholder="<?= $errors['lastName'] ?? '' ?>">
+                        </div>
                     </div>
 
                     <div class="form-field-div">
-                        <label for="lastName">achternaam</label>
-                        <input type="text" id="lastName" name="lastName" value="<?php if(isset($_SESSION['login'])) {echo $_SESSION['surname'];} else {echo ''; } ?>">
+                        <label for="email">E-mailadres*</label>
+                        <input type="email" id="email" name="email" value="<?= $_SESSION['email'] ?? '' ?>" placeholder="<?= $errors['email'] ?? '' ?>">
+                    </div>
+
+                    <div class="address-home-number">
+
+                        <div class="form-field-div">
+                            <label for="address">Straat en Huisnummer*</label>
+                            <div class="doubleField">
+                                <input type="text" id="Address" name="address" placeholder="<?= $errors['address'] ?? '' ?>">
+                                <input type="text" id="shortInput" name="houseNumber" placeholder="<?= $errors['houseNumber'] ?? '' ?>">
+                            </div>
+                        </div>
+
+                        <div class="form-field-div">
+                            <label for="city">Postcode en Stad*</label>
+                            <div class="doubleField">
+                                <input type="text" id="shortInput" name="zipcode" placeholder="<?= $errors['zipcode'] ?? '' ?>">
+                                <input type="text" id="city" name="city" placeholder="<?= $errors['city'] ?? '' ?>">
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <div class="form-field-div">
-                    <label for="email">emailadres</label>
-                    <input type="email" id="email" name="email">
-                </div>
-
-                <div class="address-home-number">
-                    <div class="form-field-div">
-                        <label for="address">adres en huisnummer</label>
-                        <input type="text" id="address" name="address">
+                <div id="rightSide">
+                    <div class="question-text-area form-field-div">
+                        <label for="question">Uw vraag</label>
+                        <textarea id="question" name="question"></textarea>
                     </div>
 
-                    <div class="form-field-div">
-                        <label for="city">postcode en stad</label>
-                        <input type="text" id="city" name="city">
-                    </div>
+                    <button type="submit" name="contact-submit" class="submit-btn">Versturen</button>
                 </div>
             </div>
-
-            <div class="question-text-area form-field-div">
-                <label for="question">uw vraag</label>
-                <textarea id="question" name="question"></textarea>
-            </div>
-
-            <button type="submit" name="contactsubmit" class="submit-btn">Versturen</button>
         </form>
     </section>
 

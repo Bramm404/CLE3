@@ -7,6 +7,10 @@
     src: url("fonts/Nexa/Nexa-Heavy.ttf") format("truetype");
 }
 
+* {
+    box-sizing: border-box;
+}
+
 
 .error {
     color: red;
@@ -125,16 +129,45 @@ form {
     flex-direction: row;
 }
 
+input {
+    box-sizing: content-box;
+    margin: 0;
+}
+
+input, textarea {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.6rem;
+}
+
+.form-details {
+    display: flex;
+    flex-direction: row;
+    gap: 5vw;
+    width: 80vw;
+}
+
+#leftSide {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+#rightSide {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 60px;
+}
+
 .form-field-div {
     display: flex;
     flex-direction: column;
     flex: 1;
-    margin: 0;
-    width: 35vw;
+    margin: 0 0 10px 0;
 }
 
 .form-field-div input {
-    width: 100%;
+    max-width: 100%;
     height: 40px;
     margin: 0;
     padding: 5px;
@@ -143,17 +176,52 @@ form {
 .first-name-last-name {
     display: flex;
     flex-direction: row;
-    gap: 5px;
+    gap: 1vw;
 }
 
 .address-home-number {
     display: flex;
-    flex-direction: row;
-    gap: 5px;
+    flex-direction: column;
 }
 
-form button {
-    background-color: red;
+.doubleField {
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+    width: 100%;
+    margin: 0;
+}
+
+.doubleField input {
+    flex: 1;
+}
+
+label {
+    font-size: 1.3rem;
+    height: 60px;
+    align-content: flex-end;
+}
+
+
+.doubleField #shortInput {
+    max-width: 20%;
+    flex: 1;
+}
+
+.submit-btn {
+    background-color: #82AC7A;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+
+.submit-btn:hover {
+    background-color: #333333;
+    cursor: pointer;
+}
+
+#question {
+    height: calc(100% - 10px);
 }
 
 /*about page styling*/
@@ -162,7 +230,6 @@ form button {
     display: flex;
     align-items: center;
     gap: 20px;
-
     width: 400px;
 }
 

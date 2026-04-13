@@ -42,8 +42,6 @@ function init() {
         }
     })
 
-
-
 }
 
 function checkforErrors() {

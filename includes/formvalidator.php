@@ -1,7 +1,7 @@
 <?php
 
 /** Registratie validatie */
-if(isset($_POST['name'])) {
+if(isset($_POST['register'])) {
 
     /** Naam validatie */
     if (empty($_POST['name'])) {
@@ -54,7 +54,7 @@ if(isset($_POST['name'])) {
 
 }
 
-if (isset($_POST['user'])) {
+if (isset($_POST['submit'])) {
     if (empty($_POST['user'])) {
         $errors['user'] = "E-mail is verplicht";
     }
@@ -67,4 +67,43 @@ if (isset($_POST['user'])) {
         $errors['password'] = "Wachtwoord verplicht";
     }
 
+}
+
+
+if (isset($_POST['contact-submit'])) {
+    if (empty($_POST['firstName'])) {
+        $errors['name'] = "Voornaam is verplicht";
+    }
+
+    if (empty($_POST['lastName'])) {
+        $errors['surname'] = "Achternaam is verplicht";
+    }
+
+    if (empty($_POST['email'])) {
+        $errors['user'] = "E-mail is verplicht";
+    }
+
+    if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+        $errors['user'] = "Ongeldige email";
+    }
+
+    if(empty($_POST['address'])) {
+        $errors['address'] = "!";
+    }
+
+    if(empty($_POST['houseNumber'])) {
+        $errors['houseNumber'] = "!";
+    }
+
+    if(empty($_POST['zipcode'])) {
+        $errors['zipcode'] = "!";
+    }
+
+    if(empty($_POST['city'])) {
+        $errors['city'] = "!";
+    }
+
+    if(empty($_POST['question'])) {
+        $errors['question'] = "!";
+    }
 }
