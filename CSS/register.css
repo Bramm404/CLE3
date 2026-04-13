@@ -15,6 +15,8 @@
     justify-self: center;
     border: 1px solid black;
     flex: 1;
+    flex-direction: column;
+    gap: 2vh;
 }
 
 #errors {
@@ -24,6 +26,22 @@
 .met {
     font-weight: bold;
     text-decoration: underline;
+}
+
+.inputError {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5vw
+}
+
+.fieldDiv {
+    width: 80vw;
+}
+
+.fieldDiv input {
+    width: 40vw;
+
+
 }
 
 header{
@@ -40,4 +58,14 @@ main {
     flex-direction: row;
     margin: 0 5vw;
 
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+#submitBtn {
+    margin: 2vh 0;
 }

@@ -48,7 +48,7 @@ if (isset($_POST['submit'])) {
             <form action="" method="post">
                 <div class="fieldDiv">
                     <label for="user">E-mail</label>
-                    <input type="text" name="user" class="field" id="name" value="<?= $user ?? '' ?>">
+                    <input type="text" name="user" class="field" id="user" value="<?= $user ?? '' ?>">
                     <p class="error"> <?= $errors['user'] ?? '' ?></p>
                 </div>
 

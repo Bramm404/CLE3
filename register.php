@@ -10,7 +10,7 @@ if (isset($_SESSION['login'])) {
 
 $errors = [];
 
-if (isset($_POST['submit'])) {
+if (isset($_POST['register'])) {
     require_once 'includes/db.php';
 
     $name = mysqli_real_escape_string($db, $_POST['name']);
@@ -88,37 +88,51 @@ if (isset($_POST['submit'])) {
         <form action="" method="post">
             <div class="fieldDiv">
                 <label for="name">Voornaam*</label>
-                <input type="text" name="name" class="field" value="<?= $name ?? ''?>">
-                <p class="error"><?= $errors['name'] ?? '' ?></p>
+                <div class="inputError">
+                    <input type="text" name="name" id="name" class="field" value="<?= $name ?? ''?>">
+                    <p class="error"><?= $errors['name'] ?? '' ?></p>
+                </div>
             </div>
 
             <div class="fieldDiv">
                 <label for="surname">Achternaam*</label>
-                <input type="text" name="surname" class="field" value="<?= $surname ?? ''?>">
-                <p class="error"><?= $errors['surname'] ?? '' ?></p>
+                <div class="inputError">
+                    <input type="text" name="surname" id="surname" class="field" value="<?= $surname ?? ''?>">
+                    <p class="error"><?= $errors['surname'] ?? '' ?></p>
+                </div>
             </div>
 
             <div class="fieldDiv">
                 <label for="email">E-Mail*</label>
-                <input type="text" name="email" class="email" value="<?= $email ?? ''?>">
-                <p class="error"> <?=$errors['email'] ?? '' ?> </p>
+                <div class="inputError">
+                    <input type="text" name="email" id="email" class="email" value="<?= $email ?? ''?>">
+                    <p class="error"> <?=$errors['email'] ?? '' ?> </p>
+                </div>
             </div>
 
 
             <div class="fieldDiv">
                 <label for="business">Bedrijf</label>
-                <input type="text" name="business" class="field" value="<?= $business ?? '' ?>">
-                <p class="error"><?=$errors['business'] ?? ''?></p>
+                <div class="inputError">
+                    <input type="text" name="business" id="business" class="field" value="<?= $business ?? '' ?>">
+                    <p class="error"><?=$errors['business'] ?? ''?></p>
+                </div>
             </div>
 
             <div class="fieldDiv">
                 <label for="password">Wachtwoord</label>
-                <input type="password" name="password" class="field">
+                <div class="inputError">
+                    <input type="password" name="password" id="password" class="field">
+                    <p class="error"> <?= $errors['password'] ?? ''?></p>
+                </div>
             </div>
 
             <div class="fieldDiv">
                 <label for="confirm_password">Wachtwoord bevestigen</label>
-                <input type="password" name="confirm_password" class="field">
+                <div class="inputField"></div>
+                <input type="password" name="confirm_password" id="confirm_password" class="field">
+                <p class="error"> <?= $errors['confirm_password'] ?? ''?></p>
+
                 <div id="checklist">
                     <p>Het wachtwoord moet het volgende bevatten:</p>
                     <p id="length">x 8 tekens lang</p>
@@ -126,25 +140,43 @@ if (isset($_POST['submit'])) {
                     <p id="number">x 1 cijfer</p>
                     <p id="spec">x 1 speciaal teken</p>
                 </div>
-                <p class="error"> <?= $errors['password'] ?? ''?></p>
-                <p class="error"> <?= $errors['confirm_password'] ?? ''?></p>
             </div>
 
             <div class="fieldDiv">
                 <label for="phone">Telefoonnummer</label>
-                <input type="text" name="phone" class="field" value="<?= $phone ?? '' ?>">
-                <p class="error"> <?= $errors['phone'] ?? ''?></p>
+                <div class="inputError">
+                    <input type="text" name="phone" id="phone" class="field" value="<?= $phone ?? '' ?>">
+                    <p class="error"> <?= $errors['phone'] ?? ''?></p>
+                </div>
             </div>
 
 
 
-            <button type="submit" name="submit" id="submitBtn">Registreer</button>
+            <button type="submit" name="register" id="submitBtn">Registreer</button>
         </form>
     </section>
 
     <?php require_once 'includes/login.php'?>
 
 </main>
+
+<footer>
+    <div>
+        <a href="#">algemene voorwaarden</a>
+        <a href="#">privacy</a>
+        <a href="#">cookies</a>
+    </div>
+    <div class="icons-copyright">
+        <img src="#">
+        <img src="#">
+        <img src="#">
+
+        <p>@DeGeldigeLift</p>
+    </div>
+</footer>
+</body>
+</html>
+
 </body>
 
 
