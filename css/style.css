@@ -269,10 +269,12 @@ dialog .close-dialog {
 }
 
 .fieldDiv input {
-    width: 100%;
+    width: calc(100% - 10px);
     height: 40px;
     margin: 0;
     padding: 5px;
+    font-size: 2rem;
+    font-family: "Roboto", sans-serif;
 }
 
 #registerDiv {

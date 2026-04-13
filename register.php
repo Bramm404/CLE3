@@ -84,8 +84,8 @@ if (isset($_POST['register'])) {
 
 <p><?= $errors['db'] ?? ''?></p>
 <main>
-    <section id="form">
-        <form action="" method="post">
+    <section>
+        <form id="form" action="" method="post">
             <div class="fieldDiv">
                 <label for="name">Voornaam*</label>
                 <div class="inputError">
@@ -112,7 +112,7 @@ if (isset($_POST['register'])) {
 
 
             <div class="fieldDiv">
-                <label for="business">Bedrijf</label>
+                <label for="business">Bedrijf*</label>
                 <div class="inputError">
                     <input type="text" name="business" id="business" class="field" value="<?= $business ?? '' ?>">
                     <p class="error"><?=$errors['business'] ?? ''?></p>
@@ -120,7 +120,7 @@ if (isset($_POST['register'])) {
             </div>
 
             <div class="fieldDiv">
-                <label for="password">Wachtwoord</label>
+                <label for="password">Wachtwoord*</label>
                 <div class="inputError">
                     <input type="password" name="password" id="password" class="field">
                     <p class="error"> <?= $errors['password'] ?? ''?></p>
@@ -128,7 +128,7 @@ if (isset($_POST['register'])) {
             </div>
 
             <div class="fieldDiv">
-                <label for="confirm_password">Wachtwoord bevestigen</label>
+                <label for="confirm_password">Wachtwoord bevestigen*</label>
                 <div class="inputField"></div>
                 <input type="password" name="confirm_password" id="confirm_password" class="field">
                 <p class="error"> <?= $errors['confirm_password'] ?? ''?></p>
@@ -178,6 +178,4 @@ if (isset($_POST['register'])) {
 </html>
 
 </body>
-
-
 </html>
