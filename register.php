@@ -2,6 +2,9 @@
 /** @var $db */
 session_start();
 
+$page = 'register.php';
+
+require_once 'includes/login.php';
 
 if (isset($_SESSION['login'])) {
     header('Location: index.php');
@@ -156,7 +159,7 @@ if (isset($_POST['register'])) {
         </form>
     </section>
 
-    <?php require_once 'includes/login.php'?>
+
 
 </main>
 

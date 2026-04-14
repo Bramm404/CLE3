@@ -19,28 +19,32 @@ function init() {
             }
         })
     })
-
-    closeBtn.addEventListener('click', () => {
-        dialog.close();
-    })
-
-    loginBtn.addEventListener('click', () => {
-
-        dialog.showModal()
-
-    })
-
-    dialog.addEventListener('click', (e) => {
-        if(e.target === dialog) {
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
             dialog.close();
-        }
-    })
+        })
+    }
 
-    login.addEventListener('submit', (e) => {
-        if(checkforErrors()) {
-            e.preventDefault()
-        }
-    })
+    if (loginBtn) {
+        loginBtn.addEventListener('click', () => {
+            dialog.showModal()
+
+        })
+    }
+    if (dialog) {
+        dialog.addEventListener('click', (e) => {
+            if(e.target === dialog) {
+                dialog.close();
+            }
+        })
+    }
+    if (login) {
+        login.addEventListener('submit', (e) => {
+            if(checkforErrors()) {
+                e.preventDefault()
+            }
+        })
+    }
 
 }
 
@@ -55,7 +59,7 @@ function checkforErrors() {
     })
 
 
-    if (hasError) {
+    if (hasError && dialog) {
         dialog.showModal()
     }
 

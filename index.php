@@ -1,6 +1,7 @@
 <?php
 session_start();
-
+$page = 'index.php';
+require_once 'includes/login.php';
 
 $errors = [];
 
@@ -132,7 +133,7 @@ if (isset($_POST['contact-submit'])) {
         </form>
     </section>
 
-    <?php require_once 'includes/login.php' ?>
+<!--    --><?php //require_once 'includes/login.php' ?>
 </main>
 
 <footer>
