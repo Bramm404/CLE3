@@ -78,12 +78,13 @@ nav a:hover {
     background-position: center;
     background-repeat: no-repeat;
     height: 300px;
+    min-height: 100vh;
 
     z-index: 5;
 }
 
 header {
-    min-height: 100vh;
+
 }
 
 header h1 {
@@ -98,7 +99,7 @@ header h1 {
 }
 
 main {
-    padding: 0px 10vw;
+    padding: 0px 12vw;
     min-height: 100vh;
     background: rgba(249,250,246,0.2);
     backdrop-filter: blur(10px);
@@ -308,7 +309,7 @@ footer {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 10vw;
+    padding: 40px 10vw;
     background-color: #F9FAF6;
     margin: 0;
 }
@@ -624,5 +625,17 @@ dialog .close-dialog {
     footer a {
         padding: 10px 15px;
     }
+}
+
+
+/*Product page styling*/
+
+.video-description {
+    display: flex;
+    gap: 50px;
+}
+
+.product-description-and-button {
+
 }
 

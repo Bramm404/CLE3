@@ -60,6 +60,7 @@ if (isset($_POST['contact-submit'])) {
 
 <header class="hero">
     <h1 class="home-page-h1">De Geldige Lift</h1>
+
     <div class="video-section">
         <canvas id="myCanvas"></canvas>
         <video style="display:none;" src="videos/scroll-video0001-0120.mp4" alt="Een animatie van het product dat omhoog en naar beneden gaat als je scrollt"></video>
