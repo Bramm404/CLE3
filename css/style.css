@@ -70,7 +70,7 @@ nav a:hover {
     justify-content: center;
     align-items: center;
 
-    background-image: url("../images/leafs.png");
+    /*background-image: url("../images/leafs.png");*/
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -87,12 +87,40 @@ header h1 {
 }
 
 main {
-    margin: 0px 10vw;
+    /*margin: 0px 10vw;*/
+    min-height: 200vh;
 }
 
 p {
     font-family: "Roboto", sans-serif;
 }
+
+.video-section {
+    height: 100vh;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    /*z-index: -1;*/
+    background-color: black;
+    top: 1000px;
+    left: 0;
+    will-change: contents;
+
+}
+
+#myCanvas {
+    object-fit: contain;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    opacity: 0.5
+}
+
+
+
+
 
 .product-preview {
     display: flex;
@@ -102,6 +130,8 @@ p {
     padding: 50px 0px;
     /*margin: 80px;*/
 }
+
+
 
 .product-preview a {
     padding: 20px 100px;
@@ -425,7 +455,8 @@ dialog .close-dialog {
     .product-preview {
         flex-direction: column;
         gap: 20px;
-        padding: 30px 0px;
+        padding: 30px 0;
+        height: 150vh;
     }
 
     .product-preview img {
