@@ -12,7 +12,7 @@ const ctx = canvas.getContext('2d');
 let scrollProgress = 0;
 
  let currentScroll = 0;
- const maxScrollSpeed = 60 ; // pixels per frame
+ const maxScrollSpeed = 30 ; // pixels per frame
 
 video.addEventListener('loadedmetadata', () => {
     resizeVideo();
@@ -60,22 +60,26 @@ function init() {
             }
         })
     }
+    if(video && canvas) {
+        window.addEventListener('wheel', (e) => {
+            if(dialog.open) {
+                return;
+            } else {
+                e.preventDefault();
 
-    window.addEventListener('wheel', (e) => {
-        if(dialog.open) {
-            return;
-        } else {
-            e.preventDefault();
+                const delta = e.deltaY > 0 ? maxScrollSpeed : -maxScrollSpeed;
+                currentScroll += delta;
 
-            const delta = e.deltaY > 0 ? maxScrollSpeed : -maxScrollSpeed;
-            currentScroll += delta;
+                const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+                currentScroll = Math.max(0, Math.min(currentScroll, maxScroll));
 
-            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-            currentScroll = Math.max(0, Math.min(currentScroll, maxScroll));
+                scrollProgress = currentScroll / maxScroll;
+                scrollProgress = Math.max(0, Math.min(1, scrollProgress));
 
-            window.scrollTo(0, currentScroll);
-        }
-    }, {passive: false});
+                window.scrollTo(0, currentScroll);
+            }
+        }, {passive: false});
+    }
 
 
 
@@ -133,7 +137,7 @@ function animateVideo() {
 
     const targetTime = scrollProgress * (video.duration);
 
-    if (Math.abs(video.currentTime - targetTime) > 0.016) {
+    if (Math.abs(video.currentTime - targetTime) > 0.01667) {
         video.currentTime = targetTime
     }
 
