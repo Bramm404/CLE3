@@ -1,4 +1,9 @@
-<?php session_start(); ?>
+<?php session_start();
+$page = 'about.php';
+
+require 'includes/login.php';
+
+?>
 
 
 <!doctype html>
@@ -37,7 +42,7 @@
         <img src="images/sketch.jpg">
     </section>
 
-    <?php require 'includes/login.php'; ?>
+
 </main>
 
 <footer>

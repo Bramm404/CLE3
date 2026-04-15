@@ -29,6 +29,9 @@ nav {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    flex-shrink: 1;
+    min-width: 0;
 }
 
 nav img {
@@ -40,6 +43,8 @@ nav a {
     color: #82AC7A;
     text-decoration: none;
     font-family: "Nexa Heavy", sans-serif;
+    flex-shrink: 1;
+    white-space: nowrap;
 }
 
 nav a:hover {
@@ -65,7 +70,7 @@ nav a:hover {
     justify-content: center;
     align-items: center;
 
-    background-image: url("../images/leafs.png");
+    /*background-image: url("../images/leafs.png");*/
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -82,12 +87,40 @@ header h1 {
 }
 
 main {
-    margin: 0px 10vw;
+    /*margin: 0px 10vw;*/
+    min-height: 200vh;
 }
 
 p {
     font-family: "Roboto", sans-serif;
 }
+
+.video-section {
+    height: 100vh;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    /*z-index: -1;*/
+    background-color: black;
+    top: 1000px;
+    left: 0;
+    will-change: contents;
+
+}
+
+#myCanvas {
+    object-fit: contain;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    opacity: 0.5
+}
+
+
+
+
 
 .product-preview {
     display: flex;
@@ -97,6 +130,8 @@ p {
     padding: 50px 0px;
     /*margin: 80px;*/
 }
+
+
 
 .product-preview a {
     padding: 20px 100px;
@@ -373,3 +408,200 @@ dialog .close-dialog {
     background-color: #608a5a;
     cursor: pointer;
 }
+
+
+
+/* Mobile responsive design - 800px and below */
+@media (max-width: 1000px) {
+    /* Navigation */
+    nav {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    nav img {
+        height: 70px;
+    }
+
+    nav div {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    nav a {
+        padding: 15px 20px;
+        text-align: center;
+        width: 100%;
+    }
+
+    /* Header */
+    header h1 {
+        font-size: 40px;
+    }
+
+    .hero {
+        height: 200px;
+    }
+
+    /* Main content */
+    main {
+        margin: 0px 5vw;
+    }
+
+    /* Product preview */
+    .product-preview {
+        flex-direction: column;
+        gap: 20px;
+        padding: 30px 0;
+        height: 150vh;
+    }
+
+    .product-preview img {
+        max-height: 200px;
+        width: 100%;
+    }
+
+    .product-preview a {
+        padding: 15px 50px;
+    }
+
+    /* Form styling */
+    .form-details {
+        flex-direction: column;
+        width: 100%;
+        gap: 3vw;
+    }
+
+    #leftSide {
+        width: 100%;
+    }
+
+    #rightSide {
+        width: 100%;
+        gap: 40px;
+    }
+
+    .first-name-last-name {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .first-name-last-name .form-field-div {
+        width: 100%;
+    }
+
+    .doubleField {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .doubleField input {
+        width: 100%;
+    }
+
+    .doubleField #shortInput {
+        max-width: 100%;
+    }
+
+    .form-field-div input {
+        max-width: 100%;
+    }
+
+    label {
+        font-size: 1.1rem;
+        height: 45px;
+    }
+
+    /* Dialog/Login modal */
+    dialog {
+        width: 90vw;
+        height: auto;
+        max-height: 90vh;
+    }
+
+    .fieldDiv {
+        width: 80vw;
+    }
+
+    .fieldDiv input {
+        font-size: 1.5rem;
+    }
+
+    #loginContainer {
+        padding: 20px 15px;
+    }
+
+    /* Footer */
+    footer {
+        flex-direction: column;
+        margin: 0 5vw;
+        gap: 20px;
+    }
+
+    footer a {
+        padding: 15px 20px;
+    }
+
+    .content-and-image,
+    .content-and-image-right {
+        flex-direction: column;
+        width: 100%;
+        gap: 20px;
+    }
+
+    .content-and-image img,
+    .content-and-image-right img {
+        width: 100%;
+    }
+}
+
+/* Extra small devices - 480px and below */
+@media (max-width: 480px) {
+    nav a {
+        padding: 12px 10px;
+        font-size: 0.9rem;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    .hero {
+        height: 150px;
+    }
+
+    main {
+        margin: 0px 10px;
+    }
+
+    .form-field-div input {
+        font-size: 1.2rem;
+    }
+
+    label {
+        font-size: 1rem;
+        height: 35px;
+    }
+
+    .fieldDiv {
+        width: 100vw;
+        padding: 0 10px;
+    }
+
+    dialog {
+        width: 95vw;
+    }
+
+    .submit-btn {
+        height: 40px;
+        font-size: 0.9rem;
+    }
+
+    footer a {
+        padding: 10px 15px;
+    }
+}
+

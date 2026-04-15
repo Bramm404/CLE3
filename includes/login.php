@@ -1,5 +1,6 @@
 <?php
 /** @var $db */
+/** @var $page */
 if (isset($_SESSION['login'])) {
     $login = true;
 }
@@ -27,7 +28,7 @@ if (isset($_POST['submit'])) {
                 $_SESSION['name'] = $client['name'];
                 $_SESSION['surname'] = $client['surname'];
 
-                header('Location: index.php');
+                header("Location: $page");
                 exit;
             } else {
                 $errors['password'] = "Wachtwoord is onjuist";

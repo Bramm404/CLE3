@@ -1,4 +1,9 @@
-<?php session_start(); ?>
+<?php session_start();
+
+$page = 'product.php';
+require 'includes/login.php';
+
+?>
 
 <!doctype html>
 <html lang="en">

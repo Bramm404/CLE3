@@ -68,10 +68,10 @@ if (isset($_POST['contact-submit'])) {
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vestibulum consequat ligula, vitae
                 bibendum enim vestibulum ac. Ut posuere libero diam, pretium malesuada nibh pharetra in. Phasellus at
                 ante justo. Duis eu nisi non mauris ultrices condimentum. In posuere augue sed metus tincidunt, a
-                vulputate urna sodales. Cras hend rerit ullamcorper lorem, sit amet tincidunt sem luctus in. Sed
+                vulputate urna sodales. Cras hendrerit ullamcorper lorem, sit amet tincidunt sem luctus in. Sed
                 efficitur nisi non quam ultricies, id mattis sem malesuada. Donec luctus placerat sollicitudin.
                 Phasellus nec neque et leo condimentum auctor commodo nec ligula.</p>
-            <a href="product.php">Ga naar pagina</a>
+            <a href="#">Ga naar pagina</a>
         </div>
 
         <img src="images/render5(light).png">
