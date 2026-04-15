@@ -1,6 +1,7 @@
 <?php
 session_start();
-
+$page = 'index.php';
+require_once 'includes/login.php';
 
 $errors = [];
 
@@ -59,9 +60,14 @@ if (isset($_POST['contact-submit'])) {
 
 <header class="hero">
     <h1 class="home-page-h1">De Geldige Lift</h1>
+    <div class="video-section">
+        <canvas id="myCanvas"></canvas>
+        <video style="display:none;" src="videos/scroll-video0001-0120.mp4"></video>
+    </div>
 </header>
 
 <main>
+
     <section class="product-preview">
         <div>
             <h2>Ons product</h2>
@@ -74,7 +80,6 @@ if (isset($_POST['contact-submit'])) {
             <a href="#">Ga naar pagina</a>
         </div>
 
-        <img src="images/render5(light).png">
     </section>
 
     <section class="form-section">
@@ -132,7 +137,6 @@ if (isset($_POST['contact-submit'])) {
         </form>
     </section>
 
-    <?php require_once 'includes/login.php' ?>
 </main>
 
 <footer>
