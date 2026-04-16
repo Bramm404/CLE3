@@ -277,6 +277,10 @@ label {
     height: calc(100% - 10px);
 }
 
+.form-section {
+    color: #FFFFFF;
+}
+
 /*about page styling*/
 
 .content-and-image {
