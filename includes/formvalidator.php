@@ -12,12 +12,10 @@ if(isset($_POST['register']) || isset($_POST['update'])) {
         $errors['surname'] = "Achternaam is verplicht";
     }
 
-
-    /** E-mail validatie */
-    if (empty($_POST['email'])) {
-        $errors['email'] = "Email is verplicht";
-    } else if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-        $errors['email'] = "Ongeldige email";
+    if (preg_match('/a-zA-Z/', $_POST['phone'])) {
+        $errors['phone'] = "Ongeldig telefoonnummer";
+    } else if (preg_match('/[[<>(){}"!@#$%^&*()_=:,.]/', $_POST['phone'])) {
+        $errors['phone'] = "Ongeldig telefoonnummer";
     }
 
     if (empty($_POST['business'])) {
@@ -26,6 +24,12 @@ if(isset($_POST['register']) || isset($_POST['update'])) {
 
 }
 if(isset($_POST['register'])) {
+    /** E-mail validatie */
+    if (empty($_POST['email'])) {
+        $errors['email'] = "Email is verplicht";
+    } else if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+        $errors['email'] = "Ongeldige email";
+    }
     /** Wachtwoord validatie */
     if (empty($_POST['password'])) {
         $errors['password'] = "Wachtwoord verplicht";
@@ -47,11 +51,7 @@ if(isset($_POST['register'])) {
         $errors['confirm_password'] = "Wachtwoorden komen niet overeen";
     }
 
-    if (preg_match('/a-zA-Z/', $_POST['phone'])) {
-        $errors['phone'] = "Ongeldig telefoonnummer";
-    } else if (preg_match('/[[<>(){}"!@#$%^&*()_=:,.]/', $_POST['phone'])) {
-        $errors['phone'] = "Ongeldig telefoonnummer";
-    }
+
 }
 
 if (isset($_POST['submit'])) {
