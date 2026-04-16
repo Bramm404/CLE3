@@ -37,9 +37,11 @@ if(!isset($_SESSION['login'])) {
         <a href="#">cookies</a>
     </div>
     <div class="icons-copyright">
-        <img src="images/icons.png" width="100">
+        <img src="#" alt="logo instagram">
+        <img src="#" alt="logo facebook">
+        <img src="#" alt="logo twitter">
 
-        <p>© 2026 DeGeldigeLift</p>
+        <p>@Our Product</p>
     </div>
 </footer>
 </body>

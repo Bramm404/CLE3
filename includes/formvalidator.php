@@ -1,7 +1,7 @@
 <?php
 
 /** Registratie validatie */
-if(isset($_POST['register'])) {
+if(isset($_POST['register']) || isset($_POST['update'])) {
 
     /** Naam validatie */
     if (empty($_POST['name'])) {
@@ -20,11 +20,12 @@ if(isset($_POST['register'])) {
         $errors['email'] = "Ongeldige email";
     }
 
-    if(empty($_POST['business'])) {
+    if (empty($_POST['business'])) {
         $errors['business'] = "Een bedrijf is verplicht";
     }
 
-
+}
+if(isset($_POST['register'])) {
     /** Wachtwoord validatie */
     if (empty($_POST['password'])) {
         $errors['password'] = "Wachtwoord verplicht";
@@ -51,7 +52,6 @@ if(isset($_POST['register'])) {
     } else if (preg_match('/[[<>(){}"!@#$%^&*()_=:,.]/', $_POST['phone'])) {
         $errors['phone'] = "Ongeldig telefoonnummer";
     }
-
 }
 
 if (isset($_POST['submit'])) {

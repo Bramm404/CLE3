@@ -1,0 +1,83 @@
+body { margin: 0;}
+
+.information {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5vh;
+}
+
+h1 {
+    text-align: center;
+}
+
+header {
+    height: 15vh;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #333333;
+    border-radius: 5px;
+    padding: 6vh 0;
+}
+
+.vertical-layer-form {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.horizontal-layer-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#updateBtn {
+    margin: 0;
+    width: 8vw;
+    height: 200px;
+    color: #F9FAF6;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    background-color: #82AC7A;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#updateBtn:hover {
+    background-color: #5B8055;
+}
+
+.inputError {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+
+#log-out-btn {
+    display: flex;
+    justify-self: flex-end;
+    padding: 25px 70px;
+    border-radius: 5px;
+    background-color: #82AC7A;
+    color: #F9FAF6;
+    text-decoration: none;
+}
+
+#log-out-btn:hover {
+    background-color: #5B8055;
+}
+
+
+input {
+    height: 50px;
+    padding: 0 20px;
+}

@@ -63,7 +63,7 @@ if (isset($_POST['contact-submit'])) {
 
     <div class="video-section">
         <canvas id="myCanvas"></canvas>
-        <video style="display:none;" src="videos/scroll-video0001-0120.mp4" alt="Een animatie van het product dat omhoog en naar beneden gaat als je scrollt"></video>
+        <video style="display:none;" src="videos/scroll-video0001-0120.mp4" alt="Een animatie van het product dat omhoog en naar beneden beweegt terwijl je scrollt"></video>
     </div>
 </header>
 
