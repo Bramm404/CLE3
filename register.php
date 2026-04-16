@@ -170,11 +170,9 @@ if (isset($_POST['register'])) {
         <a href="#">cookies</a>
     </div>
     <div class="icons-copyright">
-        <img src="#">
-        <img src="#">
-        <img src="#">
+        <img src="images/icons.png" width="100">
 
-        <p>@DeGeldigeLift</p>
+        <p>© 2026 DeGeldigeLift</p>
     </div>
 </footer>
 </body>

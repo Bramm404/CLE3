@@ -26,10 +26,13 @@ require 'includes/login.php';
 
     <section class="video-description">
 
-        <video width="400" autoplay muted loop>
+        <div class="video-box">
+        <video class="video" autoplay muted loop>
             <source src="images/product-video.mp4" type="video/mp4">
         </video>
-<section class="product-description-and-button">
+        </div>
+
+    <section class="product-description-and-button">
         <h2>De Geldige Lift</h2>
 
         <p>
@@ -42,14 +45,10 @@ require 'includes/login.php';
             De Geldige Lift draagt bij aan zelfstandigheid en inclusiviteit. Mensen in een rolstoel kunnen zelfstandig betalen, zonder hulp van anderen. Dit vergroot niet alleen het gemak, maar ook het gevoel van autonomie en waardigheid.
         </p>
         <p>
-            Daarnaast is het systeem ontworpen met gebruiksvriendelijkheid en veiligheid in gedachten. De beweging van de lift is stabiel en gecontroleerd, en de bediening is intuïtief. Hierdoor is het geschikt voor gebruik in winkels, supermarkten en andere publieke ruimtes.
-        </p>
-        <p>
             Kortom, De Geldige Lift maakt dagelijkse handelingen toegankelijker voor iedereen en vormt een belangrijke stap richting een inclusievere samenleving.
         </p>
 
-        <a href="#" class="log-in-button">Bestel nu!</a>
-</section>
+        <a href="#" class="order-button">Bestel nu!</a>
     </section>
 
     <?php require_once 'includes/login.php'; ?>
