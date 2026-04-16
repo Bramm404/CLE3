@@ -72,12 +72,7 @@ if (isset($_POST['contact-submit'])) {
     <section class="product-preview">
         <div>
             <h2>Ons product</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vestibulum consequat ligula, vitae
-                bibendum enim vestibulum ac. Ut posuere libero diam, pretium malesuada nibh pharetra in. Phasellus at
-                ante justo. Duis eu nisi non mauris ultrices condimentum. In posuere augue sed metus tincidunt, a
-                vulputate urna sodales. Cras hendrerit ullamcorper lorem, sit amet tincidunt sem luctus in. Sed
-                efficitur nisi non quam ultricies, id mattis sem malesuada. Donec luctus placerat sollicitudin.
-                Phasellus nec neque et leo condimentum auctor commodo nec ligula.</p>
+            <p>De Geldige Lift is een innovatieve oplossing die speciaal is ontworpen voor mensen met mobiliteitsproblemen, zoals rolstoelgebruikers. In plaats van dat de gebruiker zich moet verplaatsen naar een vast pinapparaat op een onhandige hoogte, brengt deze lift het pinapparaat eenvoudig naar de juiste positie.</p>
             <a href="#">Ga naar pagina</a>
         </div>
 
