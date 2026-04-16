@@ -119,9 +119,9 @@ if (isset($_POST['update'])) {
         <a href="#">cookies</a>
     </div>
     <div class="icons-copyright">
-        <img src="#">
-        <img src="#">
-        <img src="#">
+        <img src="#" alt="logo instagram">
+        <img src="#" alt="logo facebook">
+        <img src="#" alt="logo twitter">
 
         <p>@Our Product</p>
     </div>

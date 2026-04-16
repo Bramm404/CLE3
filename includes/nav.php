@@ -3,7 +3,7 @@
     <div>
         <a href="index.php">Home</a>
         <a href="product.php">Ons product</a>
-        <a href="about.php">Over ons</a>
+<!--        <a href="about.php">Over ons</a>-->
         <?php if (!isset($_SESSION['login'])) { ?>
             <a class="log-in-button" id="loginBtn" tabindex="0">Log in</a>
         <?php } else {?>
